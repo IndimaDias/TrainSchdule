@@ -1,0 +1,41 @@
+
+/* style for the body in index page */
+.bodyIndex {background-image: url("https://www.shatours.com/wp-content/uploads/2018/07/train-to-ella-sri-lanka-1.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;         
+            } 
+
+            
+         
+
+.jumbotron{
+    align-items: center;
+    display:flex;
+    background-image: url("https://image.shutterstock.com/image-photo/steam-locomotive-stands-on-platform-450w-173085770.jpg");
+    background-size : 70% 110%;
+    /* margin: 20px; */
+    /* background-color: aquamarine; */
+    background-repeat: no-repeat;
+    height: 40vh;
+}
+
+.cardStyle {
+     margin: 20% 35%;
+     float: none;
+     background-color: rgba(176, 240, 100, 0.3);
+     width: 40%;
+     font-weight: bolder;
+     color: white;
+
+}    
+
+.cardTitle {
+    text-shadow: 2px 2px yellow;
+    font-size : 60px;
+}
+
+.heading{
+    position :absolute ;
+    margin-left: 60%;
+}
