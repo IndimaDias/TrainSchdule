@@ -16,11 +16,50 @@
 </head>
 <body>
     <div class ="container container-fluid">
+        <!-- Jumbotron for heading -->
         <div class="jumbotron">
             <h1 class="display-4 heading"> ON TIME! </h1>
 
         </div>
 
+
+
+    </div>
+
+    <div class="container container-fluid">
+            <div id = "divForm" class="col  border border-dark ">
+                <h6 class="display-5 bg-dark text-white p-1 text-center">
+                    Add Train
+                </h6>
+                <!-- This section is for add train form  -->
+                <form>
+                    <div class="form-group mt-4">
+                        <label for = "trainName" class = "text-left font-weight-bold"> Train Name</label>
+                        <input id = "trainName" type = "text" class = "form-control form-control-sm">
+                    </div>
+
+                    <div class="form-group mt-4">
+                        <label for = "trainDes" class = "text-left font-weight-bold"> Destination</label>
+                        <input id = "trainDes" type = "text" class = "form-control form-control-sm">
+                    </div>
+                    <div class="form-group mt-4">
+                        <label for = "firstTrain" class = "text-left font-weight-bold"> First Train Time</label>
+                        <input id = "firstTrain" type = "text" class = "form-control form-control-sm">
+                    </div>
+                    <div class="form-group mt-4">
+                        <label for = "freqency" class = "text-left font-weight-bold"> Frequency</label>
+                        <input id = "freqency" type = "text" class = "form-control form-control-sm">
+                    </div>
+                </form>
+                
+            </div>
+    
+            <div id = "divTable" class="col border border-dark text-center">
+                <!-- This section is for the table with train schedules -->
+                <h6 class="display-5 bg-dark text-white p-1">
+                    Current Train Schedule
+                </h6>
+            </div>
     </div>
 </body>
 </html>
