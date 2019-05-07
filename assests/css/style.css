@@ -48,5 +48,10 @@
    /* position: absolute; */
     float: right;
    padding: 10px;
-   width: 60%;
+   width: 60%;  
+}
+
+#tblSchedule{
+    font-size: 14px;
+    font-weight: bold;
 }
