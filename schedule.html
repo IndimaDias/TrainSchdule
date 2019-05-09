@@ -9,10 +9,15 @@
   
     <link rel = "stylesheet" type = "text/css" href = "./assests/css/reset.css">
     <link rel="stylesheet" type="text/css"  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" type ="text/css" href="./assests/css/style.css">
-    
-    <script src ="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type ="text/css" href="./assests/css/style.css">  
+
+    <script src ="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>         
     <script type = "text/javascript" src = "./assests/js/app.js" ></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/6.0.0/firebase-app.js"></script>  -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.0/firebase.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+    
 
 </head>
 <body>
@@ -44,11 +49,11 @@
                         <input id = "trainDes" type = "text" class = "form-control form-control-sm">
                     </div>
                     <div class="form-group mt-4">
-                        <label for = "firstTrain" class = "text-left font-weight-bold"> First Train Time</label>
+                        <label for = "firstTrain" class = "text-left font-weight-bold"> First Train Time(HH:mm - military time)</label>
                         <input id = "firstTrain" type = "text" class = "form-control form-control-sm">
                     </div>
                     <div class="form-group mt-4">
-                        <label for = "freqency" class = "text-left font-weight-bold"> Frequency</label>
+                        <label for = "freqency" class = "text-left font-weight-bold"> Frequency(min)</label>
                         <input id = "freqency" type = "text" class = "form-control form-control-sm">
                     </div>
                     <button id = "btnAdd" type="submit" class="btn btn-primary">Submit</button>            
@@ -61,9 +66,9 @@
                 <h6 class="display-5 bg-dark text-white p-1">
                     Current Train Schedule
                 </h6>
-                <table id = "tblSchedule" class="table text-center">
+                <table id = "tblSchedule" class="table text-left">
                         <thead>
-                          <tr class = "boder border-bottom">             
+                          <tr class = "boder border-bottom font-weight-bold">             
                             <th scope="col">Train Name</th>
                             <th scope="col">Destination</th>
                             <th scope="col">Frequency (min)</th>
@@ -77,5 +82,7 @@
                       </table>
             </div>
     </div>
+    
+  
 </body>
 </html>
