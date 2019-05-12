@@ -42,6 +42,7 @@ var firebaseConfig = {
         dateAdded: firebase.database.ServerValue.TIMESTAMP
     });
 
+    $("#frmSubmit")[0].reset();
   });
 
   //.................................................................................................................
@@ -50,7 +51,9 @@ var firebaseConfig = {
   database.ref().on("child_added", function(snapshot) {
     // storing the snapshot.val() in a variable for convenience
     var sv = snapshot.val();
+    var sKey = snapshot.key;
 
+  
     // creating table body and table row
     var tblBody = $("#tableBody");
     var tblRow = $("<tr>");
@@ -66,8 +69,31 @@ var firebaseConfig = {
     nextTime = $("<th>").text(nextTrainTime);
     minutesTo = $("<th>").text(minutesToNext);
 
+    var dataKey= $("<th>");
+    // dataKey.attr("id","keyValue");
+    // dataKey.attr("data-value",sKey)
+    // dataKey.css("display","none");
+
+    var deleteBtn = $("<button>");
+    deleteBtn.attr("id","btnDelete");
+    deleteBtn.attr("type","button");
+    deleteBtn.text("-");
+    deleteBtn.addClass("btnDelete");
+    deleteBtn.attr("data-btn",sKey);
+    dataKey.append(deleteBtn);
+
+    var updateBtn = $("<button>");
+    // updateBtn.attr("id","btnUpdate");
+    // updateBtn.attr("type","button");
+    // updateBtn.text("U");
+    // updateBtn.addClass("btnUpdate mr-1");
+    // updateBtn.attr("data-btn",sKey);
+
+
+    dataKey.append(deleteBtn);
+
     // add fileds to the row and then the row to the table
-    tblRow.append(trainName,destination,frequency,nextTime,minutesTo );
+    tblRow.append(trainName,destination,frequency,nextTime,minutesTo,dataKey);
     tblBody.append(tblRow);
 
   }, function(errorObject) {
@@ -88,6 +114,7 @@ var firebaseConfig = {
 
     // get the remainder after dividing the difference of the current time and the first train time  
     var timeRemain = diffTime % pFrequency;
+
     // number of minutes for the next train
     var timeTillNextTrain = pFrequency - timeRemain;
 
@@ -107,6 +134,30 @@ var firebaseConfig = {
     // return moment.minute(diffTime);
     return diffTime;
 
-  }
+  } ;
+
+  //...................................................................................................................
+
+  $(document).on("click","#btnDelete",function(){
+      debugger;
+            
+      var dataKey = $(this).data("btn");
+      database.ref().child(dataKey).remove();
+      $(this).parent().parent().remove();
+
+  });  
+
+
+//   $(document).on("click","#btnUpdate",function(){
+//     debugger;
+          
+//     var dataKey = $(this).data("btn");
+//     // database.ref().child(dataKey).remove();
+//     database.ref().once(dataKey).then(function(snapshot){
+//       console.log(snapshot.val());
+//     });
+    
+
+// });   
 
 });
