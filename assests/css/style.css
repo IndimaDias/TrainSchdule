@@ -12,8 +12,9 @@
 .jumbotron{
     align-items: center;
     display:flex;
-    background-image: url("https://image.shutterstock.com/image-photo/steam-locomotive-stands-on-platform-450w-173085770.jpg");
-    background-size : 70% 110%;
+    /* background-image: url("https://image.shutterstock.com/image-photo/steam-locomotive-stands-on-platform-450w-173085770.jpg"); */
+    background-image: url("../images/train.jpg");
+    background-size : 50% 110%;
     background-repeat: no-repeat;
     height: 40vh;
 }
@@ -35,7 +36,7 @@
 
 .heading{
     position :absolute ;
-    margin-left: 58%;
+    margin-left: 50%;
 }
 
 #divForm{
